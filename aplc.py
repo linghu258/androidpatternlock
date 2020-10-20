@@ -150,7 +150,7 @@ def main():
         
     # load SHA1 hash from file
     f = open(sys.argv[1], 'rb')
-    gest = f.read(hashlib.sha1().digest_size).encode('hex')
+    gest = binascii.hexlify(f.read(hashlib.sha1().digest_size))
     f.close()
 
     # check hash length
